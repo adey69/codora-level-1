@@ -1,0 +1,38 @@
+export const PLAYERS: IPlayer[] = [
+  {
+    name: 'Aaron Hanks',
+    picture: require('../assets/images/hank.jpeg'),
+    position: 'Right Fielder',
+    team: 'Milwaukee Braves',
+    dateOfBirth: 'February 5, 1934 (age 84)',
+    origin: 'Mobile, Alabama',
+    height: '6\'0"',
+    weight: '180 lbs',
+    battingHand: 'Right',
+    throwingHand: 'Left',
+    plateAppearances: 13941,
+    bases: {
+      singles: 2294,
+      doubles: 624,
+      triples: 98,
+    },
+  },
+  {
+    name: 'Nathan Johns',
+    picture: require('../assets/images/barry.jpeg'),
+    position: 'Left Fielder',
+    team: 'Milwaukee Braves',
+    dateOfBirth: 'November 8, 1977 (age 47)',
+    origin: 'Manhattan, New York',
+    height: '6\'2"',
+    weight: '184 lbs',
+    battingHand: 'Right',
+    throwingHand: 'Right',
+    plateAppearances: 12492,
+    bases: {
+      singles: 1145,
+      doubles: 741,
+      triples: 42,
+    },
+  },
+];

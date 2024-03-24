@@ -1,0 +1,15 @@
+export const Images = {
+  home: require('./home.png'),
+  explore: require('./eye.png'),
+  location: require('./location.png'),
+  unitedStates: require('./united-states.png'),
+  chart: require('./chart.png'),
+  numbers: require('./book.png'),
+  hanks: require('./hank.jpeg'),
+  heart: require('./heart.png'),
+  heartFilled: require('./heart-filled.png'),
+  search: require('./search.png'),
+  back: require('./back.png'),
+  close: require('./close.png'),
+  barry: require('./barry.jpeg'),
+};
