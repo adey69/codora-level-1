@@ -1,79 +1,32 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Implementation approach:
 
-# Getting Started
+I first understood the needs of the task at hand and decided which folder structure I have to follow. This being a smaller project, I didn't need to follow the modular approach and finalized the current approach.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Then I analyzed if the app requires any state management, special themes, translations etc so that I could decide the libraries I have to use. Then I identified the UI components I needed to extract
 
-## Step 1: Start the Metro Server
+Folder structure:
+src -> The root directory of the application
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- assets -> Contains the required images
+- components -> The reusable components compose this folder.
+- data -> Usually I would store API related stuff in here, but the constants required in this project only.
+- navigation -> I keep my navigation files separate from components to isolate it.
+- screens -> The actual screens for the application
+- strings -> I prefer to keep strings in separate file so that if I need to add localization later, I can do that easily.
+- theme -> Any theme related code like colors, fonts etc.
+- types -> The .d.ts files for globally reusable types.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+I keep the structure where I use `index` files to shorten the export paths.
+For components, I keep separate files for component, styles, and logic (using custom hooks). This way I am able to avoid the component files from being too large and can easily find out where do I need to make changes.
 
-```bash
-# using npm
-npm start
+Assets: Usually I would use SVG icons to keep the app size short but due to unavailability of free svgs, I used png files.
 
-# OR using Yarn
-yarn start
-```
+Screens: I only had to implement one screen as per the requirement but to demonstrate a more realistic experience, I added a list of players on the home screen and upon pressing a list item, you're taken to the required screen.
 
-## Step 2: Start your Application
+Optimization: There was no heavy processing in the application but for demo purposes, I used useMemo, useCallback and React.memo() features to make use of memoization where possible and avoided those where I felt that the cost of comparison would exceed the cost of re-rendering.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Animations: I prefer react-native-reanimated to create animations and I tried to create a pleasant looking UI by adding a few animations in this.
 
-### For Android
+Due to lack of some personal errands, I couldn't do absolutely everything correct but hopefully the code structure and the neatness can give you an idea of the way I approach the problems.
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Let me know if you have any questions!
